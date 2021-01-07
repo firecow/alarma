@@ -2,5 +2,5 @@
 - name: filesystem-disk-usage
   schedule: '@every 1m'
   thresholds:
-    - { column: result, name: warn, target: 90 }
-    - { column: result, name: fatal, target: 95 }
+    - { column: used, severity: warn, target: 90 }
+    - { column: used, severity: fatal, target: 95 }

@@ -1,6 +1,6 @@
-elasticsearches:
+elastics:
 
-  - name: playtopia
+  - name: Playtopia
     url: https://elastic-mjn.latoyapip.org/
     username: latoyapip
     password: ${LATOYAPIP_PASSWORD}

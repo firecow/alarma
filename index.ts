@@ -6,7 +6,6 @@ import * as nunjucks from 'nunjucks';
 
     const config ={
         headers: {
-            'Authorization': `Basic ${Buffer.from("latoyapip:410023a0cf86e8eff3fc71924f3ecc5303f7fa6321f4172087ed97fba6c2f81bf003aaa96aa0f11a6459a52e5ecd077362ff").toString('base64')}`
         }
     };
 

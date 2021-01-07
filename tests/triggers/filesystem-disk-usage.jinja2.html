@@ -1,6 +1,8 @@
-System: '{{ elastic.name }}'
-Type:   'Filesystem disk usage'
-Items:
+system: {{ elastic.name }}
+type: Filesystem disk usage
+items:
 {%- for item in items %}
-  - Mountpoint: '{{ item.mount_point }}', Host '{{ item.hostname }}', Usage: '{{ item.used }}%'
+  - mountpoint: {{ item.mount_point }}
+    host: {{ item.hostname }}
+    usage: {{ item.used }}%
 {%- endfor -%}

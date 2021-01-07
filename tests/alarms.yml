@@ -1,0 +1,10 @@
+elasticsearches:
+
+  - name: playtopia
+    url: https://elastic-mjn.latoyapip.org/
+    username: latoyapip
+    password: ${LATOYAPIP_PASSWORD}
+
+actions:
+  slack:
+    url: https://domain.slack.com/webhook/spiffyness

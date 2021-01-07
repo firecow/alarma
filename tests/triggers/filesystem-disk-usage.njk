@@ -1,0 +1,5 @@
+{{ elastic.name }} {{ elastic.url }}
+Filesystem disk usage
+{%- for item in items %}
+{{ item.device_name }} on {{ item.hostname }} have reached {{ item.used }}% usage
+{%- endfor -%}

@@ -1,7 +1,7 @@
 ---
 elastics:
 
-  - name: Playtopia
+  - id: playtopia
     url: https://elastic-mjn.latoyapip.org/
     username: latoyapip
     password: ${LATOYAPIP_PASSWORD}

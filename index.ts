@@ -31,7 +31,7 @@ dotenv.config();
 
         for (const elasticCnf of alarmaCnf.elastics) {
             const elasticNjkInput = {
-                name: elasticCnf.name,
+                id: elasticCnf.id,
                 url: elasticCnf.url
             }
 

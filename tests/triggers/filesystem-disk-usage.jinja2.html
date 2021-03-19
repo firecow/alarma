@@ -1,8 +1,0 @@
-elastic: {{ elastic.id }}
-type: Filesystem disk usage
-items:
-{%- for item in items %}
-  - mountpoint: {{ item.mount_point }}
-    host: {{ item.hostname }}
-    usage: {{ item.used }}%
-{%- endfor -%}

@@ -1,6 +1,0 @@
----
-- id: filesystem-disk-usage
-  schedule: '@every 1m'
-  thresholds:
-    - { column: used, severity: warn, target: 90 }
-    - { column: used, severity: fatal, target: 95 }

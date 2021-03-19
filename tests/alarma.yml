@@ -1,11 +1,12 @@
 ---
 elastics:
 
-  - id: playtopia
-    url: https://elastic-mjn.latoyapip.org/
-    username: latoyapip
-    password: ${LATOYAPIP_PASSWORD}
+  - url: ${ELASTIC_URL}
+    username: ${ELASTIC_USERNAME}
+    password: ${ELASTIC_PASSWORD}
 
 actions:
   slack:
     url: https://domain.slack.com/webhook/spiffyness
+  pagerduty:
+    api-token: ${PAGERDUTY_TOKEN}

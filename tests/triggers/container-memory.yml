@@ -1,0 +1,36 @@
+---
+schedule: '@every 1m'
+
+column: 'docker.memory.usage.pct'
+
+thresholds:
+  - severity: warn
+    target: 4
+    actions: [slack]
+  - severity: fail
+    target: 80
+    actions: [slack, pagerduty]
+
+sql: |
+  SELECT
+    container.name,
+    host.name,
+    ROUND(MAX(docker.memory.usage.pct) * 100, 1) as "docker.memory.usage.pct"
+
+  FROM "metricbeat-*"
+
+  WHERE "event.dataset" = 'docker.memory'
+    AND "@timestamp" > NOW() - INTERVAL 10 MINUTE
+
+  GROUP BY container.name, host.name
+
+njk: |
+  elastic: {{ elastic.url }}
+  type: container memory
+  severity: {{ severity }}
+
+  {%- for item in items %}
+    - container.name: {{ item['container.name'] }}
+      host.name: {{ item['host.name'] }}
+      usage: {{ item['docker.memory.usage.pct'] }}%
+  {% endfor -%}

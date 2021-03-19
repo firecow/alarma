@@ -36,9 +36,8 @@ dotenv.config();
             const axiosCnf = {
                 validateStatus: () => true,
                 headers: {
-                    // 'Authorization': `Basic ${Buffer.from(`${elasticCnf.username}:${elasticCnf.password}`).toString('base64')}`,
-                    'User-Agent': `alarma/${version}`,
-                    'Cookie': 'cegosso=eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTY0MzY5NzIsIm5iZiI6MTYxNTgzMjEzMiwidmVyc2lvbiI6MSwiYXV0aGVudGljYXRlZCI6dHJ1ZSwiZW1haWwiOiJtam5AY2Vnby5kayIsImRvbWFpbiI6ImNlZ28uZGsifQ.Xb5_ZrVHHe2kmoh3oTOq5-w-k9cSGjQ8XEwllolhYcrfnmWvUtDrASFiCerXIak4hs56VLO2Kb5oNXA1nDyOag',
+                    'Authorization': `Basic ${Buffer.from(`${elasticCnf.username}:${elasticCnf.password}`).toString('base64')}`,
+                    'User-Agent': `alarma/`,
                 },
             };
             const res = await axios.post(`${elasticCnf.url.replace(/\/$/, '')}/_sql?format=csv`, data, axiosCnf);
